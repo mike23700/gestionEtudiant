@@ -43,6 +43,6 @@
         </c:otherwise>
     </c:choose>
 
-    <p><a href="${pageContext.request.contextPath}/">Retour à l'accueil</a></p>
+    <p><a href="/gestion/">Retour à l'accueil</a></p>
 </body>
 </html>

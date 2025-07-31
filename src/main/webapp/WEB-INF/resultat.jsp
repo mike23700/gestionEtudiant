@@ -55,6 +55,6 @@
         <p>Aucun étudiant trouvé.</p>
     </c:if>
 
-    <p><a href="${pageContext.request.contextPath}/">Retour à l'accueil</a></p>
+    <p><a href="/gestion/">Retour à l'accueil</a></p>
 </body>
 </html>
