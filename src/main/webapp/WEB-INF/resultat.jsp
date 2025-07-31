@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.tp.models.Student" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,10 +20,7 @@
         <input type="submit" value="Rechercher">
     </form>
 
-    <%
-        List<Student> resultats = (List<Student>) request.getAttribute("resultats");
-        if (resultats != null && !resultats.isEmpty()) {
-    %>
+    <c:if test="${not empty resultats}">
         <h3>Résultats :</h3>
         <table border="1">
             <tr>
@@ -31,21 +29,25 @@
                 <th>Prénom</th>
                 <th>Sexe</th>
                 <th>Date de naissance</th>
+                <th>Date d'inscription</th>
             </tr>
-            <% for (Student s : resultats) { %>
+            <c:forEach var="s" items="${resultats}">
                 <tr>
-                    <td><%= s.getMatricule() %></td>
-                    <td><%= s.getName() %></td>
-                    <td><%= s.getSurname() %></td>
-                    <td><%= s.getSex() %></td>
-                    <td><%= s.getFormattedDateOfBirth() %></td>
+                    <td>${s.matricule}</td>
+                    <td>${s.name}</td>
+                    <td>${s.surname}</td>
+                    <td>${s.sex}</td>
+                    <td>${s.formattedDateOfBirth}</td>
+                    <td>${s.formattedDateRegister}</td>
                 </tr>
-            <% } %>
+            </c:forEach>
         </table>
-    <% } else if (resultats != null) { %>
-        <p>Aucun étudiant trouvé.</p>
-    <% } %>
+    </c:if>
 
-    <p><a href="<%= request.getContextPath() %>/">Retour à l'accueil</a></p>
+    <c:if test="${resultats != null && resultats.isEmpty()}">
+        <p>Aucun étudiant trouvé.</p>
+    </c:if>
+
+    <p><a href="${pageContext.request.contextPath}/">Retour à l'accueil</a></p>
 </body>
 </html>

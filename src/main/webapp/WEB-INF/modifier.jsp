@@ -1,5 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="com.tp.models.Student" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,34 +8,34 @@
 <body>
     <h2>Modifier un étudiant</h2>
 
-    <%
-        Student s = (Student) request.getAttribute("etudiant");
-        if (s != null) {
-    %>
-    <form method="post" action="modifier">
-        <input type="hidden" name="matricule" value="<%= s.getMatricule() %>">
+    <c:choose>
+        <c:when test="${not empty etudiant}">
+            <form method="post" action="modifier">
+                <input type="hidden" name="matricule" value="${etudiant.matricule}" />
 
-        <label>Nom :</label><br>
-        <input type="text" name="name" value="<%= s.getName() %>" required><br><br>
+                <label>Nom :</label><br>
+                <input type="text" name="name" value="${etudiant.name}" required><br><br>
 
-        <label>Prénom :</label><br>
-        <input type="text" name="surname" value="<%= s.getSurname() %>" required><br><br>
+                <label>Prénom :</label><br>
+                <input type="text" name="surname" value="${etudiant.surname}" required><br><br>
 
-        <label>Sexe :</label><br>
-        <select name="sex" required>
-            <option value="M" <%= s.getSex() == 'M' ? "selected" : "" %>>Masculin</option>
-            <option value="F" <%= s.getSex() == 'F' ? "selected" : "" %>>Féminin</option>
-        </select><br><br>
+                <label>Sexe :</label>
+                <select name="sex" required>
+                   <option value="M" ${'M'.equals(etudiant.sex) ? 'selected' : ''}>M</option>
+                   <option value="F" ${'F'.equals(etudiant.sex) ? 'selected' : ''}>F</option>
+                </select><br><br>
 
-        <label>Date de naissance :</label><br>
-        <input type="date" name="dob" value="<%= s.getDateOfBirth() %>" required><br><br>
+                <label>Date de naissance :</label><br>
+                <input type="date" name="dob" value="${etudiant.dateOfBirth}" required><br><br>
 
-        <input type="submit" value="Modifier">
-    </form>
-    <% } else { %>
-        <p>Étudiant non trouvé.</p>
-    <% } %>
+                <input type="submit" value="Modifier">
+            </form>
+        </c:when>
+        <c:otherwise>
+            <p>Étudiant non trouvé.</p>
+        </c:otherwise>
+    </c:choose>
 
-    <p><a href="<%= request.getContextPath() %>/">Retour à l'accueil</a></p>
+    <p><a href="${pageContext.request.contextPath}/">Retour à l'accueil</a></p>
 </body>
 </html>

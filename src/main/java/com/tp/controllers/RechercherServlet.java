@@ -37,7 +37,7 @@ public class RechercherServlet extends HttpServlet {
         }
 
         request.setAttribute("resultats", resultats);
-        this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/resultat.jsp")
+        this.getServletContext().getRequestDispatcher("/WEB-INF/resultat.jsp")
                 .forward(request, response);
     }
 }

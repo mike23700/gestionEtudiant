@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.List" %>
 <%@ page import="com.tp.models.Student" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,37 +10,39 @@
 <body>
     <h2>Liste de tous les étudiants</h2>
 
-    <%
-        List<Student> liste = (List<Student>) request.getAttribute("listeEtudiants");
-        if (liste != null && !liste.isEmpty()) {
-    %>
-        <table border="1">
-            <tr>
-                <th>Matricule</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Sexe</th>
-                <th>Date de naissance</th>
-                <th>Actions</th>
-            </tr>
-            <% for (Student s : liste) { %>
+    <c:choose>
+        <c:when test="${not empty listeEtudiants}">
+            <table border="1">
                 <tr>
-                    <td><%= s.getMatricule() %></td>
-                    <td><%= s.getName() %></td>
-                    <td><%= s.getSurname() %></td>
-                    <td><%= s.getSex() %></td>
-                    <td><%= s.getFormattedDateOfBirth() %></td>
-                    <td>
-                        <a href="modifier?matricule=<%= s.getMatricule() %>">Modifier</a> |
-                        <a href="supprimer?matricule=<%= s.getMatricule() %>">Supprimer</a>
-                    </td>
+                    <th>Matricule</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Sexe</th>
+                    <th>Date de naissance</th>
+                    <th>Date d'inscription</th>
+                    <th>Actions</th>
                 </tr>
-            <% } %>
-        </table>
-    <% } else { %>
-        <p>Aucun étudiant enregistré.</p>
-    <% } %>
+                <c:forEach var="s" items="${listeEtudiants}">
+                    <tr>
+                        <td>${s.matricule}</td>
+                        <td>${s.name}</td>
+                        <td>${s.surname}</td>
+                        <td>${s.sex}</td>
+                        <td>${s.formattedDateOfBirth}</td>
+                        <td>${s.formattedDateRegister}</td>
+                        <td>
+                            <a href="modifier?matricule=${s.matricule}">Modifier</a> |
+                            <a href="supprimer?matricule=${s.matricule}">Supprimer</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:when>
+        <c:otherwise>
+            <p>Aucun étudiant enregistré.</p>
+        </c:otherwise>
+    </c:choose>
 
-    <p><a href="<%= request.getContextPath() %>/">Retour à l'accueil</a></p>
+    <p><a href="${pageContext.request.contextPath}/">Retour à l'accueil</a></p>
 </body>
 </html>

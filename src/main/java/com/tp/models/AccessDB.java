@@ -14,13 +14,13 @@ public class AccessDB {
 
     static {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Important pour MySQL 8+
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    // Enregistrer un étudiant (DateRegister géré par la BD)
+    // Enregistrer un étudiant
     public void enregistrerEtudiant(Student student) throws SQLException {
         String query = "INSERT INTO Student (Matricule, Name, Surname, Sex, DateOfBirth) VALUES (?, ?, ?, ?, ?)";
 
@@ -54,7 +54,7 @@ public class AccessDB {
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
-                // DateRegister est optionnel
+                student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 return student;
             }
 
@@ -83,6 +83,7 @@ public class AccessDB {
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
+                student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 liste.add(student);
             }
 
@@ -93,7 +94,7 @@ public class AccessDB {
         return liste;
     }
 
-    // Supprimer un étudiant par matricule
+    // Supprimer un étudiant
     public boolean supprimerParMatricule(String matricule) {
         String query = "DELETE FROM Student WHERE Matricule = ?";
 
@@ -110,7 +111,7 @@ public class AccessDB {
         }
     }
 
-    // Modifier un étudiant (sans toucher à DateRegister)
+    // Modifier un étudiant
     public boolean modifierEtudiant(Student student) {
         String query = "UPDATE Student SET Name = ?, Surname = ?, Sex = ?, DateOfBirth = ? WHERE Matricule = ?";
 
@@ -148,6 +149,7 @@ public class AccessDB {
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
+                student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 liste.add(student);
             }
 
