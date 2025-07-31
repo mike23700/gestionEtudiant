@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS Student (
    http://localhost:8080/gestion/home
    ```
 
-## Bonus
+## 🍡 Bonus
 
 ```
 La prochaine version est en cours de developement avec ajout de fonctionalite d'atribuer les matricule generer automatiquement.
