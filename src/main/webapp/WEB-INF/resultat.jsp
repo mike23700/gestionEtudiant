@@ -39,8 +39,15 @@
                     <td>${s.sex}</td>
                     <td>${s.formattedDateOfBirth}</td>
                     <td>${s.formattedDateRegister}</td>
+                    <td>
+                        <form method="get" action="modifier">
+                            <input type="hidden" name="matricule" value="${s.matricule}">
+                            <input type="submit" value="Modifier">
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
+
         </table>
     </c:if>
 
