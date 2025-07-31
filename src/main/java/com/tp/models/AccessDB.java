@@ -1,9 +1,6 @@
 package com.tp.models;
 
-import com.tp.models.Student;
-
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
