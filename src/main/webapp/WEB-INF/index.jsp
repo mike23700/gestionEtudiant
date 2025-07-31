@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <h1>Bienvenue dans le système d’inscription des étudiants</h1>

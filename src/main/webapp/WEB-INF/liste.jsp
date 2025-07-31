@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Liste des étudiants</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <h2>Liste de tous les étudiants</h2>
@@ -43,6 +44,6 @@
         </c:otherwise>
     </c:choose>
 
-    <p><a href="/gestion/">Retour à l'accueil</a></p>
+    <p><a href="/gestion/home">Retour à l'accueil</a></p>
 </body>
 </html>

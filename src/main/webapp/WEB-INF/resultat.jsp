@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Résultat de recherche</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <h2>Recherche d'étudiant</h2>
@@ -55,6 +56,6 @@
         <p>Aucun étudiant trouvé.</p>
     </c:if>
 
-    <p><a href="/gestion/">Retour à l'accueil</a></p>
+    <p><a href="/gestion/home">Retour à l'accueil</a></p>
 </body>
 </html>
