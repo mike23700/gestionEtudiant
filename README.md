@@ -16,7 +16,7 @@ Ce projet est une application web développée en **Java EE (JSP/Servlet)** perm
 - JDBC (Connexion MySQL)
 - HTML/CSS
 - JSTL (JavaServer Pages Standard Tag Library)
-```
+
 
 ## ⚙️ Configuration requise
 
