@@ -11,7 +11,7 @@
 <h2>Modifier un étudiant</h2>
 
 <c:if test="${not empty etudiant}">
-  <form method="post" action="${pageContext.request.contextPath}/modifier">
+  <form method="post" action="/gestion/modifier">
     <div class="container">
       <input type="hidden" name="matricule" value="${etudiant.matricule}">
 
