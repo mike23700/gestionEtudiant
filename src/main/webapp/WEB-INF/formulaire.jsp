@@ -21,14 +21,19 @@
         <label>Prénom : </label>
         <input type="text" name="surname" id="surname" required>
       </div>
+
       <div>
-        <input type="radio" name="sex" id="homme" value="H" required>
+         <label>Sexe :</label><br>
+      <div>
+        <input type="radio" name="sex" id="homme" value="M" required>
         <label for="homme">Homme</label>
       </div>
       <div>
         <input type="radio" name="sex" id="femme" value="F" required>
         <label for="femme">Femme</label>
       </div>
+      </div>
+
       <div>
         <label>Date de Naissance : </label>
         <input type="date" name="dateofbirth" id="dateofbirth" required>
