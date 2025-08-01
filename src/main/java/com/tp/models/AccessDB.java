@@ -1,8 +1,10 @@
 package com.tp.models;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class AccessDB {
     private static final String URL = "jdbc:mysql://localhost:3306/student_db";
@@ -19,7 +21,7 @@ public class AccessDB {
 
     // Enregistrer un étudiant
     public void enregistrerEtudiant(Student student) throws SQLException {
-        String query = "INSERT INTO Student (Matricule, Name, Surname, Sex, DateOfBirth) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Student (Matricule, Name, Surname, Sex, DateOfBirth, DateRegister) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -29,6 +31,7 @@ public class AccessDB {
             stmt.setString(3, student.getSurname());
             stmt.setString(4, String.valueOf(student.getSex()));
             stmt.setDate(5, Date.valueOf(student.getDateOfBirth()));
+            stmt.setTimestamp(6, Timestamp.valueOf(student.getDateRegister()));
 
             stmt.executeUpdate();
         }
@@ -156,4 +159,34 @@ public class AccessDB {
 
         return liste;
     }
+
+    // Générer un matricule unique automatiquement
+    public String genererMatricule() {
+        String matricule = null;
+        int annee = LocalDate.now().getYear();
+        String anneeStr = String.valueOf(annee).substring(2); // ex: 2025 -> "25"
+        char lettre = (char) ('A' + new Random().nextInt(26));
+
+        int compteur = 1;
+
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM Student WHERE YEAR(DateRegister) = ?")) {
+
+            stmt.setInt(1, annee);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                compteur = rs.getInt(1) + 1;
+            }
+
+            String compteurStr = String.format("%04d", compteur);
+            matricule = anneeStr + lettre + compteurStr;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return matricule;
+    }
+
 }

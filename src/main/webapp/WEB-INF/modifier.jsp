@@ -28,12 +28,13 @@
       <div>
         <label>Sexe :</label><br>
 
-        <input type="radio" name="sex" id="homme" value="M" required
-         <c:if test="${etudiant.sexAsString == 'M'}">checked</c:if>
-        > <label for="homme">Homme</label>
-        <input type="radio" name="sex" id="femme" value="F" required
-          <c:if test="${etudiant.sexAsString == 'F'}">checked</c:if>
-        > <label for="femme">Femme</label>
+        <input type="radio" name="sex" id="homme" value="M"
+               ${etudiant.sexAsString == 'M' ? 'checked' : ''} required>
+        <label for="homme">Homme</label>
+
+        <input type="radio" name="sex" id="femme" value="F"
+               ${etudiant.sexAsString == 'F' ? 'checked' : ''} required>
+        <label for="femme">Femme</label>
       </div>
 
       <div>
@@ -46,7 +47,7 @@
       </div>
 
       <c:if test="${not empty message}">
-        <p style="color:red; font-weight:bold;">${message}</p>
+        <p>${message}</p>
       </c:if>
     </div>
   </form>

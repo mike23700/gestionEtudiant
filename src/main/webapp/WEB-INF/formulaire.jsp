@@ -10,10 +10,6 @@
   <form method="post" action="/gestion/formulaire">
     <div class="container">
       <div>
-        <label>Matricule : </label>
-        <input type="text" name="matricule" id="matricule" required>
-      </div>
-      <div>
         <label>Nom : </label>
         <input type="text" name="name" id="name" required>
       </div>

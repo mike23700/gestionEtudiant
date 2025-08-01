@@ -1,4 +1,3 @@
-/* Style général */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -19,7 +18,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Liens */
 ul {
     list-style-type: none;
     padding: 0;
@@ -29,7 +27,6 @@ ul li {
     margin: 8px 0;
 }
 
-/* Tableaux */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -46,7 +43,6 @@ th {
     background-color: #e9ecef;
 }
 
-/* Formulaires */
 form {
     margin-top: 20px;
 }
@@ -75,8 +71,3 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Messages */
-p {
-    margin-top: 20px;
-    font-style: italic;
-}

@@ -15,8 +15,8 @@ public class AjouterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Student student = new Student();
+        AccessDB db = new AccessDB();
 
-        student.setMatricule(request.getParameter("matricule"));
         student.setName(request.getParameter("name"));
         student.setSurname(request.getParameter("surname"));
 
@@ -28,8 +28,12 @@ public class AjouterServlet extends HttpServlet {
         LocalDate birthdate = LocalDate.parse(birthdateString);
         student.setDateOfBirth(birthdate);
 
+        String matricule = db.genererMatricule();
+        student.setMatricule(matricule);
+
+        student.setDateRegister(java.time.LocalDateTime.now());
+
         try {
-            AccessDB db = new AccessDB();
             db.enregistrerEtudiant(student);
             request.setAttribute("message", "Étudiant ajouté avec succès !");
         } catch (SQLException e) {
