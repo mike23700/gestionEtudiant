@@ -49,6 +49,10 @@ public class Student {
         this.Sex = sex;
     }
 
+    public String getSexAsString() {
+        return String.valueOf(this.Sex);
+    }
+
     public LocalDate getDateOfBirth() {
         return DateOfBirth;
     }

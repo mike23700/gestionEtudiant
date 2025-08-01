@@ -28,13 +28,12 @@
       <div>
         <label>Sexe :</label><br>
 
-        <input type="radio" name="sex" id="homme" value="M"
-          <c:if test="${s.getSex()== 'M'}">checked</c:if> required>
-        <label for="homme">Homme</label>
-
-        <input type="radio" name="sex" id="femme" value="F"
-          <c:if test="${s.getSex() == 'F'}">checked</c:if> required>
-        <label for="femme">Femme</label>
+        <input type="radio" name="sex" id="homme" value="M" required
+         <c:if test="${etudiant.sexAsString == 'M'}">checked</c:if>
+        > <label for="homme">Homme</label>
+        <input type="radio" name="sex" id="femme" value="F" required
+          <c:if test="${etudiant.sexAsString == 'F'}">checked</c:if>
+        > <label for="femme">Femme</label>
       </div>
 
       <div>
