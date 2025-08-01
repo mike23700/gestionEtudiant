@@ -163,16 +163,14 @@ public class AccessDB {
     // Générer un matricule unique automatiquement
     public String genererMatricule() {
         String matricule = null;
-        int annee = LocalDate.now().getYear();
-        String anneeStr = String.valueOf(annee).substring(2); // ex: 2025 -> "25"
-        char lettre = (char) ('A' + new Random().nextInt(26));
+
+        String etu = "Etu";
 
         int compteur = 1;
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM Student WHERE YEAR(DateRegister) = ?")) {
+             PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM Student")) {
 
-            stmt.setInt(1, annee);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
@@ -180,7 +178,7 @@ public class AccessDB {
             }
 
             String compteurStr = String.format("%04d", compteur);
-            matricule = anneeStr + lettre + compteurStr;
+            matricule =  etu + compteurStr;
 
         } catch (SQLException e) {
             e.printStackTrace();
