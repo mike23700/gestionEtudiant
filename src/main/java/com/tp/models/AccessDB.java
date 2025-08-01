@@ -1,10 +1,8 @@
 package com.tp.models;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class AccessDB {
     private static final String URL = "jdbc:mysql://localhost:3306/student_db";
