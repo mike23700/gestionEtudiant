@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
+<h2>Entrez les informations de l'étudiant'</h2>
   <form method="post" action="/gestion/formulaire">
     <div class="container">
       <div>
@@ -42,7 +43,7 @@
   </form>
 
   <c:if test="${not empty message}">
-      <p style="font-weight: bold;">${message}</p>
+      <p style="color : green; font-weight: bold;">${message}</p>
   </c:if>
 
    <p><a href="/gestion/home">Retour à l'accueil</a></p>

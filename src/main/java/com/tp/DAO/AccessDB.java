@@ -167,26 +167,12 @@ public class AccessDB {
 
         String etu = "Etu";
 
-        int compteur = 1;
+        String unique = UUID.randomUUID().toString().substring(0,4);
 
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement("SELECT COUNT(*) FROM Student")) {
 
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                compteur = rs.getInt(1) + 1;
-            }
-
-            String compter = String.format("%04d", compteur);
-            matricule =  etu + compter;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            matricule =  etu + unique;
 
         return matricule;
-        //UUID.randomUUID().toString();
 
     }
 
