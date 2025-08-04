@@ -13,8 +13,7 @@ public class Student {
     private LocalDate DateOfBirth;
     private LocalDateTime DateRegister;
 
-    public void Student(){
-
+    public  Student(){
     }
 
     public String getMatricule() {

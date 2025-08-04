@@ -6,6 +6,7 @@
 <head>
   <title>Modifier un étudiant</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
 <h2>Modifier un étudiant</h2>

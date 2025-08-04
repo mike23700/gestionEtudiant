@@ -1,6 +1,6 @@
 package com.tp.controllers;
 
-import com.tp.models.AccessDB;
+import com.tp.DAO.AccessDB;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;

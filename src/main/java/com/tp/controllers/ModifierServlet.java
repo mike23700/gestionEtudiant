@@ -1,7 +1,7 @@
 package com.tp.controllers;
 
 
-import com.tp.models.AccessDB;
+import com.tp.DAO.AccessDB;
 import com.tp.models.Student;
 
 import javax.servlet.*;

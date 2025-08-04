@@ -7,10 +7,11 @@
 <head>
     <title>Liste des étudiants</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/liste.css">
 </head>
 <body>
     <h2>Liste de tous les étudiants</h2>
-
+    <p><a href="/gestion/rechercher">Rechercher</a></p>
     <c:choose>
         <c:when test="${not empty listeEtudiants}">
             <table border="1">
@@ -33,7 +34,7 @@
                         <td>${s.formattedDateRegister}</td>
                         <td>
                             <a href="modifier?matricule=${s.matricule}">Modifier</a> |
-                            <a href="supprimer?matricule=${s.matricule}">Supprimer</a>
+                            <a href="supprimer?matricule=${s.matricule}" onclick="return confirm('Voulez-vous vraiment supprimer cet étudiant ?');">Supprimer</a>
                         </td>
                     </tr>
                 </c:forEach>

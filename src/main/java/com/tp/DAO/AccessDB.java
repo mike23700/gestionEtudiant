@@ -1,8 +1,11 @@
-package com.tp.models;
+package com.tp.DAO;
+
+import com.tp.models.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class AccessDB {
     private static final String URL = "jdbc:mysql://localhost:3306/student_db";
@@ -15,7 +18,7 @@ public class AccessDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
+    }//a comprendre
 
     // Enregistrer un étudiant
     public void enregistrerEtudiant(Student student) throws SQLException {
@@ -175,14 +178,16 @@ public class AccessDB {
                 compteur = rs.getInt(1) + 1;
             }
 
-            String compteurStr = String.format("%04d", compteur);
-            matricule =  etu + compteurStr;
+            String compter = String.format("%04d", compteur);
+            matricule =  etu + compter;
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return matricule;
+        //UUID.randomUUID().toString();
+
     }
 
 }

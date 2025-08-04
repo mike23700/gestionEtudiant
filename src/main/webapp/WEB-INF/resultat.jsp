@@ -7,6 +7,7 @@
 <head>
     <title>Résultat de recherche</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/recherche.css">
 </head>
 <body>
     <h2>Recherche d'étudiant</h2>
