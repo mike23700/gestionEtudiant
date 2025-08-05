@@ -32,6 +32,8 @@
                 <th>Sexe</th>
                 <th>Date de naissance</th>
                 <th>Date d'inscription</th>
+                <th>Statut</th>
+                <th>Actions</th>
             </tr>
             <c:forEach var="s" items="${resultats}">
                 <tr>
@@ -41,11 +43,10 @@
                     <td>${s.sex}</td>
                     <td>${s.formattedDateOfBirth}</td>
                     <td>${s.formattedDateRegister}</td>
+                    <td>${s.statut}</td>
                     <td>
-                        <form method="get" action="modifier">
-                            <input type="hidden" name="matricule" value="${s.matricule}">
-                            <input type="submit" value="Modifier">
-                        </form>
+                       <a href="modifier?matricule=${s.matricule}">Modifier</a> |
+                       <a href="supprimer?matricule=${s.matricule}" onclick="return confirm('Voulez-vous vraiment supprimer étudiant  ${s.name}?');">Supprimer</a>
                     </td>
                 </tr>
             </c:forEach>

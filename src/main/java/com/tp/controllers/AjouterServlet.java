@@ -27,7 +27,7 @@ public class AjouterServlet extends HttpServlet {
         String birthdateString = request.getParameter("dateofbirth");
         LocalDate birthdate = LocalDate.parse(birthdateString);
         student.setDateOfBirth(birthdate);
-
+        student.setStatut(request.getParameter("statut"));
         String matricule = db.genererMatricule();
         student.setMatricule(matricule);
 

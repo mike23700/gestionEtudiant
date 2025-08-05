@@ -38,6 +38,7 @@ public class ModifierServlet extends HttpServlet {
         student.setSurname(request.getParameter("surname"));
         student.setSex(request.getParameter("sex").charAt(0));
         student.setDateOfBirth(LocalDate.parse(request.getParameter("dob")));
+        student.setStatut(request.getParameter("statut"));
 
         AccessDB db = new AccessDB();
         boolean success = db.modifierEtudiant(student);

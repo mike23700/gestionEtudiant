@@ -10,6 +10,7 @@ public class Student {
     private String Name;
     private String Surname;
     private char Sex;
+    private String Statut;
     private LocalDate DateOfBirth;
     private LocalDateTime DateRegister;
 
@@ -50,6 +51,14 @@ public class Student {
 
     public String getSexAsString() {
         return String.valueOf(this.Sex);
+    }
+
+    public String getStatut() {
+        return Statut;
+    }
+
+    public void setStatut(String statut) {
+        this.Statut = statut;
     }
 
     public LocalDate getDateOfBirth() {

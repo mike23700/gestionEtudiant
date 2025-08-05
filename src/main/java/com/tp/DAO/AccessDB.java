@@ -18,11 +18,11 @@ public class AccessDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }//a comprendre
+    }
 
     // Enregistrer un étudiant
     public void enregistrerEtudiant(Student student) throws SQLException {
-        String query = "INSERT INTO Student (Matricule, Name, Surname, Sex, DateOfBirth, DateRegister) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Student (Matricule, Name, Surname, Sex, Statut, DateOfBirth, DateRegister) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -31,8 +31,9 @@ public class AccessDB {
             stmt.setString(2, student.getName());
             stmt.setString(3, student.getSurname());
             stmt.setString(4, String.valueOf(student.getSex()));
-            stmt.setDate(5, Date.valueOf(student.getDateOfBirth()));
-            stmt.setTimestamp(6, Timestamp.valueOf(student.getDateRegister()));
+            stmt.setString(5, student.getStatut());
+            stmt.setDate(6, Date.valueOf(student.getDateOfBirth()));
+            stmt.setTimestamp(7, Timestamp.valueOf(student.getDateRegister()));
 
             stmt.executeUpdate();
         }
@@ -54,6 +55,7 @@ public class AccessDB {
                 student.setName(rs.getString("Name"));
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
+                student.setStatut(rs.getString("Statut"));
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
                 student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 return student;
@@ -83,6 +85,7 @@ public class AccessDB {
                 student.setName(rs.getString("Name"));
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
+                student.setStatut(rs.getString("Statut")); // LECTURE du statut
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
                 student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 liste.add(student);
@@ -114,7 +117,7 @@ public class AccessDB {
 
     // Modifier un étudiant
     public boolean modifierEtudiant(Student student) {
-        String query = "UPDATE Student SET Name = ?, Surname = ?, Sex = ?, DateOfBirth = ? WHERE Matricule = ?";
+        String query = "UPDATE Student SET Name = ?, Surname = ?, Sex = ?, Statut = ?, DateOfBirth = ? WHERE Matricule = ?";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -122,8 +125,9 @@ public class AccessDB {
             stmt.setString(1, student.getName());
             stmt.setString(2, student.getSurname());
             stmt.setString(3, String.valueOf(student.getSex()));
-            stmt.setDate(4, Date.valueOf(student.getDateOfBirth()));
-            stmt.setString(5, student.getMatricule());
+            stmt.setString(4, student.getStatut());
+            stmt.setDate(5, Date.valueOf(student.getDateOfBirth()));
+            stmt.setString(6, student.getMatricule());
 
             int updated = stmt.executeUpdate();
             return updated > 0;
@@ -149,6 +153,7 @@ public class AccessDB {
                 student.setName(rs.getString("Name"));
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
+                student.setStatut(rs.getString("Statut")); // LECTURE du statut
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
                 student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 liste.add(student);
@@ -161,19 +166,13 @@ public class AccessDB {
         return liste;
     }
 
-    // Générer un matricule unique automatiquement
+    // Générer un matricule unique
     public String genererMatricule() {
         String matricule = null;
-
         String etu = "Etu";
-
-        String unique = UUID.randomUUID().toString().substring(0,4);
-
-
-            matricule =  etu + unique;
-
+        String unique = UUID.randomUUID().toString().substring(0, 4);
+        matricule = etu + unique;
         return matricule;
-
     }
 
 }
