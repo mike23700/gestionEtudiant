@@ -106,6 +106,7 @@ p a:hover {
     font-weight: bold;
     display: inline-block;
     text-align: center;
+    width: 80px;
 }
 
 .badge-pre {
