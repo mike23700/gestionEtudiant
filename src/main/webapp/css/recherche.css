@@ -155,7 +155,7 @@ p a:hover {
     background-color: rgba(0,0,0,0.6);
 }
 
-.modal-content {
+.modal#modal .modal-content {
     background-color: #fff;
     margin: auto;
     padding: 30px;
@@ -179,3 +179,4 @@ p a:hover {
 .close:hover {
     color: red;
 }
+
