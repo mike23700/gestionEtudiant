@@ -39,7 +39,7 @@
                             </span>
                         </td>
                         <td>
-                            <a href="modifier?matricule=${s.matricule}">Modifier</a> |
+                            <a href="modifier" onclick="ouvrirModal('${s.matricule}'); return false;">Modifier</a> |
                             <a href="supprimer?matricule=${s.matricule}" onclick="return confirm('Voulez-vous vraiment supprimer étudiant  ${s.name}?');">Supprimer</a>
                         </td>
                     </tr>
@@ -52,5 +52,40 @@
     </c:choose>
 
     <p><a href="/gestion/home">Retour à l'accueil</a></p>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="fermerModal()">&times;</span>
+        <div id="modal-body">
+          <!-- Le formulaire sera chargé ici par AJAX -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function ouvrirModal(matricule) {
+        document.getElementById('modal').style.display = 'block';
+
+        fetch('/gestion/modifier?matricule=' + matricule)
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const form = doc.querySelector('form');
+                if (form) {
+                    document.getElementById('modal-body').innerHTML = '';
+                    document.getElementById('modal-body').appendChild(form);
+                } else {
+                    document.getElementById('modal-body').innerHTML = "<p>Erreur : étudiant non trouvé.</p>";
+                }
+            });
+    }
+
+    function fermerModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+    </script>
+
 </body>
 </html>

@@ -1,20 +1,13 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Modifier un étudiant</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/form.css">
-</head>
-<body>
-<h2>Modifier un étudiant</h2>
 
 <c:if test="${not empty etudiant}">
   <form method="post" action="/gestion/modifier">
     <div class="container">
       <input type="hidden" name="matricule" value="${etudiant.matricule}">
+
+      <h2>Modifier l'étudiant ${etudiant.name}</h2>
 
       <div>
         <label>Matricule :</label>
@@ -69,9 +62,6 @@
         <input type="submit" value="Modifier">
       </div>
 
-      <c:if test="${not empty message}">
-        <p style="color: green; font-weight: bold;">${message}</p>
-      </c:if>
     </div>
   </form>
 </c:if>
@@ -80,6 +70,3 @@
   <p>Étudiant non trouvé.</p>
 </c:if>
 
-<p><a href="/gestion/home">Retour à l'accueil</a></p>
-</body>
-</html>
