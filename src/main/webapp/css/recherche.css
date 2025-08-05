@@ -117,3 +117,27 @@ p a {
 p a:hover {
     background-color: #117a8b;
 }
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge-pre {
+    background-color: orange;
+    color: white;
+}
+
+.badge-ins {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-des {
+    background-color: #dc3545;
+    color: white;
+}

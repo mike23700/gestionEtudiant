@@ -99,23 +99,26 @@ p a:hover {
     background-color: #0056b3;
 }
 
-.statut-pre {
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge-pre {
     background-color: orange;
     color: white;
-    font-weight: bold;
-    border-radius: 5px;
 }
 
-.statut-ins {
+.badge-ins {
     background-color: #28a745;
     color: white;
-    font-weight: bold;
-    border-radius: 5px;
 }
 
-.statut-des {
+.badge-des {
     background-color: #dc3545;
     color: white;
-    font-weight: bold;
-    border-radius: 5px;
 }

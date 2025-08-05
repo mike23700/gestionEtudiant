@@ -43,7 +43,11 @@
                     <td>${s.sex}</td>
                     <td>${s.formattedDateOfBirth}</td>
                     <td>${s.formattedDateRegister}</td>
-                    <td>${s.statut}</td>
+                    <td>
+                       <span class="${s.statut == 'Pre-inscrit' ? 'badge badge-pre' : s.statut == 'Inscrit' ? 'badge badge-ins' : s.statut == 'Desinscrit' ? 'badge badge-des' : 'badge'}">
+                          ${s.statut}
+                       </span>
+                    </td>
                     <td>
                        <a href="modifier?matricule=${s.matricule}">Modifier</a> |
                        <a href="supprimer?matricule=${s.matricule}" onclick="return confirm('Voulez-vous vraiment supprimer étudiant  ${s.name}?');">Supprimer</a>
