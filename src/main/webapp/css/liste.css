@@ -98,3 +98,24 @@ p a {
 p a:hover {
     background-color: #0056b3;
 }
+
+.statut-pre {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.statut-ins {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.statut-des {
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
