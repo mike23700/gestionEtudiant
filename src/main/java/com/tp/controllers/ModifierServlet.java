@@ -73,7 +73,7 @@ public class ModifierServlet extends HttpServlet {
         }
 
         if (success) {
-            response.sendRedirect(request.getContextPath() + "/lister");
+            response.sendRedirect("lister");
         } else {
             request.setAttribute("message", "Erreur lors de la modification de l'étudiant.");
             request.setAttribute("etudiant", student);

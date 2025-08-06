@@ -71,7 +71,7 @@ public class AccessDB {
     // Rechercher les étudiants par nom
     public List<Student> rechercherParNom(String nom) {
         List<Student> liste = new ArrayList<>();
-        String query = "SELECT * FROM Student WHERE Name = ?";
+        String query = "SELECT * FROM Student WHERE Name = ? ORDER BY DateRegister";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {

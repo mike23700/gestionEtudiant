@@ -27,17 +27,11 @@ public class SupprimerServlet extends HttpServlet {
 
         if (matricule != null && !matricule.isEmpty()) {
             try {
-                success = studentDao.supprimerParMatricule(matricule);
+                studentDao.supprimerParMatricule(matricule);
             } catch (SQLException e) {
                 e.printStackTrace();
                 request.setAttribute("message", "Erreur lors de la suppression de l'étudiant : " + e.getMessage());
             }
-        }
-
-        if (success) {
-            request.getSession().setAttribute("infoMessage", "Étudiant supprimé avec succès !");
-        } else {
-            request.getSession().setAttribute("errorMessage", "Erreur lors de la suppression ou matricule invalide.");
         }
         response.sendRedirect("lister");
     }

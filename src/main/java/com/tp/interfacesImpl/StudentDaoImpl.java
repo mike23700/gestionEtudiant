@@ -127,7 +127,7 @@ public class StudentDaoImpl implements StudentDao {
     @Override
     public List<Student> listerEtudiants() throws SQLException {
         List<Student> liste = new ArrayList<>();
-        String query = "SELECT * FROM Student";
+        String query = "SELECT * FROM Student ORDER BY DateRegister";
 
         try (Connection conn = daoFactory.getConnection();
              Statement stmt = conn.createStatement();
