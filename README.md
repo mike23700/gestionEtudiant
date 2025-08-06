@@ -34,15 +34,15 @@ CREATE DATABASE student_db;
 
 USE student_db;
 
-CREATE TABLE IF NOT EXISTS Student (
-    Matricule VARCHAR(20) PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    Surname VARCHAR(100) NOT NULL,
-    Sex VARCHAR(10) NOT NULL,
-    DateOfBirth DATE NOT NULL,
-    DateRegister TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-);
+CREATE TABLE `Student` (
+  `Matricule` varchar(10) NOT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `Surname` varchar(50) DEFAULT NULL,
+  `Sex` char(1) DEFAULT NULL,
+  `DateOfBirth` date DEFAULT NULL,
+  `DateRegister` datetime DEFAULT current_timestamp(),
+  `Statut` varchar(20) DEFAULT 'Pré-inscrit'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
 
 ## ▶️ Déploiement
