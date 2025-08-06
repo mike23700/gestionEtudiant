@@ -17,7 +17,6 @@ public class ModifierServlet extends HttpServlet {
 
     private StudentDao studentDao;
 
-    @Override
     public void init() throws ServletException {
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.studentDao = daoFactory.getStudentDao();

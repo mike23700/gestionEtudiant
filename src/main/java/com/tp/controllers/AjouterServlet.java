@@ -19,7 +19,6 @@ public class AjouterServlet extends HttpServlet {
 
     private StudentDao studentDao;
 
-    @Override
     public void init() throws ServletException {
         DaoFactory daoFactory = DaoFactory.getInstance();
         this.studentDao = daoFactory.getStudentDao();
@@ -33,15 +32,11 @@ public class AjouterServlet extends HttpServlet {
         student.setSurname(request.getParameter("surname"));
 
         String sexString = request.getParameter("sex");
-        if (sexString != null && !sexString.isEmpty()) {
-            student.setSex(sexString.charAt(0));
-        }
+        student.setSex(sexString.charAt(0));
 
         String birthdateString = request.getParameter("dateofbirth");
-        if (birthdateString != null && !birthdateString.isEmpty()) {
-            LocalDate birthdate = LocalDate.parse(birthdateString);
-            student.setDateOfBirth(birthdate);
-        }
+        LocalDate birthdate = LocalDate.parse(birthdateString);
+        student.setDateOfBirth(birthdate);
 
         student.setStatut(request.getParameter("statut"));
         student.setDateRegister(LocalDateTime.now());
