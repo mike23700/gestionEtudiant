@@ -1,4 +1,4 @@
-package com.tp.DAO;
+package com.tp.dao;
 
 import com.tp.models.Student;
 
@@ -85,7 +85,7 @@ public class AccessDB {
                 student.setName(rs.getString("Name"));
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
-                student.setStatut(rs.getString("Statut")); // LECTURE du statut
+                student.setStatut(rs.getString("Statut"));
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
                 student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 liste.add(student);
@@ -153,7 +153,7 @@ public class AccessDB {
                 student.setName(rs.getString("Name"));
                 student.setSurname(rs.getString("Surname"));
                 student.setSex(rs.getString("Sex").charAt(0));
-                student.setStatut(rs.getString("Statut")); // LECTURE du statut
+                student.setStatut(rs.getString("Statut"));
                 student.setDateOfBirth(rs.getDate("DateOfBirth").toLocalDate());
                 student.setDateRegister(rs.getTimestamp("DateRegister").toLocalDateTime());
                 liste.add(student);

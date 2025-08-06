@@ -1,40 +1,56 @@
 package com.tp.controllers;
 
+import com.tp.dao.DaoFactory;
+import com.tp.interfaces.StudentDao;
 import com.tp.models.Student;
-import com.tp.DAO.AccessDB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @WebServlet("/formulaire")
 public class AjouterServlet extends HttpServlet {
+
+    private StudentDao studentDao;
+
+    @Override
+    public void init() throws ServletException {
+        DaoFactory daoFactory = DaoFactory.getInstance();
+        this.studentDao = daoFactory.getStudentDao();
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Student student = new Student();
-        AccessDB db = new AccessDB();
 
         student.setName(request.getParameter("name"));
         student.setSurname(request.getParameter("surname"));
 
         String sexString = request.getParameter("sex");
-        char sexChar = sexString.charAt(0);
-        student.setSex(sexChar);
+        if (sexString != null && !sexString.isEmpty()) {
+            student.setSex(sexString.charAt(0));
+        }
 
         String birthdateString = request.getParameter("dateofbirth");
-        LocalDate birthdate = LocalDate.parse(birthdateString);
-        student.setDateOfBirth(birthdate);
-        student.setStatut(request.getParameter("statut"));
-        String matricule = db.genererMatricule();
-        student.setMatricule(matricule);
+        if (birthdateString != null && !birthdateString.isEmpty()) {
+            LocalDate birthdate = LocalDate.parse(birthdateString);
+            student.setDateOfBirth(birthdate);
+        }
 
-        student.setDateRegister(java.time.LocalDateTime.now());
+        student.setStatut(request.getParameter("statut"));
+        student.setDateRegister(LocalDateTime.now());
 
         try {
-            db.enregistrerEtudiant(student);
+            String matricule = studentDao.genererMatricule();
+            student.setMatricule(matricule);
+
+            studentDao.enregistrerEtudiant(student);
             request.setAttribute("message", "Étudiant ajouté avec succès !");
         } catch (SQLException e) {
             e.printStackTrace();

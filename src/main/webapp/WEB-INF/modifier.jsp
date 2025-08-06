@@ -57,7 +57,7 @@
       </div>
 
       <div>
-        <input type="submit" value="Modifier">
+        <input type="submit" value="Modifier" onclick="return confirm('Voulez-vous vraiment modifier les informations de ${etudiant.name}?');">
       </div>
 
     </div>

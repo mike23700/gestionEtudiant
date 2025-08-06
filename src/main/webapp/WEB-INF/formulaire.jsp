@@ -42,8 +42,7 @@
            <label for="pre">Pre-inscrit</label>
            <input type="radio" name="statut" id="ins" value="Inscrit" required>
            <label for="ins">Inscrit</label>
-           <input type="radio" name="statut" id="des" value="Desinscrit" required>
-           <label for="des">Desinscrit</label>
+
          </div>
       </div>
 
