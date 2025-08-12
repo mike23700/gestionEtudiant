@@ -1,0 +1,105 @@
+
+
+
+
+
+
+Quatrieme Semaine
+Semaine : 
+
+
+15/08/2025
+
+
+14/08/2025
+
+
+13/08/2025
+
+
+12/08/2025
+Apprentissage sur le cycle de vie d'une requete HTTP et revision generale de tout les concepts appris jusqu'ici
+
+11/08/2025
+Absent
+
+
+Troisieme semaine
+Semaine : Lecture et implementation de different pattern nottament le pattern; -DAO
+									       -Singleton
+									       -Factory
+									       -Observer
+									       -Front controller
+
+
+08/08/2025
+Bonsoir a tous, aujourd'hui lecture et implémentation du pattern Observer
+
+07/08/2025
+Bonsoir a tous, journée consacrée a l'apprentissage et implémentation du model front controller et  des regex
+
+06/08/2025
+Good evening everyone, today I implemented the dao design pattern in the project : gestion d’étudiant
+
+05/08/2025
+Bonsoir à tous, aujourd’hui j’ai continué les améliorations sur le tp gestion d’étudiants et commencer l’apprentissage sur le pattern DAO
+
+04/08/2025
+Bonsoir a tous , aujourd'hui j'ai lue sur le pattern singleton et commencer a apporter des améliorations au tp de gestion étudiants selon les directives de mon encadreur. 
+
+
+
+
+
+
+Deuxieme Semaine
+Semaine: Continuation de l'apprentissage de Java EE, introduction de la jstl et la JDBC et travail pratique sur le projet gestion etudiant pour appliquer tout ce que j'ai appris
+
+
+01/08/2025
+Bonsoir a tous, 
+Rapport sur le travail pratique 
+ Fonctionnalités: -Ajout des étudaints
+                          -Recherche d'un etudiant
+                          -Affichage de tout les etudiants de la Base de données
+                           -Modifications des informations d'un etudiant
+                         -Suppresion des étudiants 
+ Apprentissage: Dans ce projet j'ai appris a connecter mon application java a une base de données MySQL, j'ai appris a implementer le modele MVC dans un projet et pouvoir structurer mon projet.
+ Difficultés:  J'ai eu des difficulter au debut sur le deploiement du projet grace au serveur Tomcatt, la recupertion des context pour charger une jsp, les design de l'application depuis un fichier css
+ 
+ Bonsoir a tous aujourd’hui  j'ai terminer  le tp de gestion des étudiants , l’implémentation des différents modules suivant le principe de CRUD  et la generation de matricule pour les attribuer automatiquement au étudiants ajouter
+
+31/07/2025
+Bonsoir a tous. Aujourd'hui : travail sur le tp gestion etudiant precisement les modules de recherche et suppression d'etudiants.
+
+30/07/2025
+Good evening every one . Today I startes working on a small test project: A student management system. Started configuring the database and the project structure.
+
+29/07/2025
+Bonsoir a tous, aujourd'hui continuation sur l'apprentissage de la java EE précisément la JSTL et connexion  une base de données avec JDBC.
+
+28/07/2025
+Bonsoir a tous aujourd'hui j'ai continuer mon apprentissage sur le JAVA EE, precisement les servlets, les pages  JSP et l'Expression language EL
+
+
+
+
+
+
+
+Premiere Semaine
+Semaine: Apprentissage sur le concept de Java EE -Les servlets
+						 -Les beans
+						 -Les jsp
+						 -le model MVC
+						 
+
+25/07/2025
+bonsoir a tous aujourd'hui j'ai continuer mon  servlet test, les pages JSP en implementant les directives taglibs et directives page
+
+24/07/2025
+Bonsoir à tous,
+aujourd’hui: création d’une servlet test et une page jsp, puis implementation de transmission de données entre la servlet et la page jsp via les objets request
+
+23/07/2025
+Good evening every one , today I started learning about the MVC model and had an introduction to Java EE, specifically focusing on HTTP requests.
