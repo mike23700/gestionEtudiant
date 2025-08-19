@@ -24,8 +24,7 @@ public class RechercherServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/WEB-INF/resultat.jsp")
-                .forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/resultat.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

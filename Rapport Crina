@@ -15,10 +15,10 @@ Semaine:
 
 
 19/08/2025
-
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création du package reservation pour la réservations de livre, implementation de la creation d'une reservation et la mis a jour du statut d'une réservation.
 
 18/08/2025
-Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création de la base de données, mise en place de la factory pour l'access au données dans la base de données, ajout des controllers pour l'ajout et suppression d'utilisateur ainsi que les controllers de connexion et deconnexion d'utilisateurs
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création de la base de données, mise en place de la factory pour l'access au données dans la base de données, ajout des controllers pour l'ajout et suppression d'utilisateur ainsi que les controllers de connexion et deconnexion d'utilisateurs.
 
 
 
