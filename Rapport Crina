@@ -10,7 +10,7 @@ Semaine:
 
 
 21/08/2025
-
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création des controllers pour les dashboard d'admin et membres, implementation de la fonctionnalité de changement de mots de passe par un membres, création de compteur pour avoir le nombres de membres enregistré et nombre de reservation actif, debut de conception de la landing page de la platform web.
 
 20/08/2025
 Good evening, everyone. Today, in the library management system: creating controllers to retrieve the list of reservations and the reservation history, and continuing the implementation for updating a reservation's status.
