@@ -2,12 +2,40 @@
 
 
 
-Cinquime Semaine
+
+Sixieme Semaine
 Semaine:
 
 
-22/08/2025
+29/08/2025
+Bonsoir à tous,
+Aujourd’hui sur le tp de gestion de bibliothèque : modification apportée sur le module de reservation des livres
 
+28/08/2025
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création des controllers pour les dashboard d'admin et membres, implementation de la fonctionnalité de changement de mots de passe par un membres, création de compteur pour avoir le nombres de membres enregistré et nombre de reservation actif, debut de conception de la landing page de la platform web.
+
+27/08/2025
+Good evening, everyone. Today, in the library management system: creating controllers to retrieve the list of reservations and the reservation history, and continuing the implementation for updating a reservation's status.
+
+26/08/2025
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques, Modules de reservations : affichage des réservations et filtrage par status du coté admin, affichage des reservations actif du coté membres. Modules d'emprunts : affichage des livres emprunté pas un membres précis.
+
+25/08/2025
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création de la base de données, mise en place de la factory pour l'access au données dans la base de données, ajout des controllers pour l'ajout et suppression d'utilisateur ainsi que les controllers de connexion et deconnexion d'utilisateurs.
+
+
+
+
+
+
+
+Cinquime Semaine
+Semaine: Avancement sur le projet de gestion de bibliotheque, finalisation de la premeiere partie du backend de la plateform, commencement du front end avec les jsp, des améliorations serons apporté au backend la semaine suivante pour ameliorer l'UX
+
+
+22/08/2025
+Bonsoir à tous,
+Aujourd’hui sur le tp de gestion de bibliothèque : modification apportée sur le module de reservation des livres
 
 21/08/2025
 Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création des controllers pour les dashboard d'admin et membres, implementation de la fonctionnalité de changement de mots de passe par un membres, création de compteur pour avoir le nombres de membres enregistré et nombre de reservation actif, debut de conception de la landing page de la platform web.
