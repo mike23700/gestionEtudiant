@@ -12,7 +12,7 @@ Bonsoir à tous,
 Aujourd’hui sur le tp de gestion de bibliothèque : modification apportée sur le module de reservation des livres
 
 28/08/2025
-Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création des controllers pour les dashboard d'admin et membres, implementation de la fonctionnalité de changement de mots de passe par un membres, création de compteur pour avoir le nombres de membres enregistré et nombre de reservation actif, debut de conception de la landing page de la platform web.
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : Fonctionnalité de recherche d'utilisateur et de réservation par l'admin, ajout d'une modal pour l'affichage d'information d'un membre.
 
 27/08/2025
 Good evening, everyone. Today, in the library management system: -Creation of a modal page for addition of members by admin and modal for user informations display. -Member's loan list.
