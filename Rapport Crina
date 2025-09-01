@@ -1,15 +1,11 @@
 
-
-
-
-
-Sixieme Semaine
-Semaine:
+Septieme Semaine
+Semaine: Continuation du TP de gestion de bibliotheques, achevement de la majeur partie de mon travail, en attente d l'avancement de mon college eb l'aidant. Ajout de membres, connexion, changement de mots de pase, emprunt et remise de livre, creation de reservation et update de statut, logo bien choisis et design de l'application matchant avec cela .
 
 
 29/08/2025
 Bonsoir à tous,
-Aujourd’hui sur le tp de gestion de bibliothèque : modification apportée sur le module de reservation des livres
+Aujourd’hui sur le tp de gestion de bibliothèque : modification apportée sur le module d'emprunts de livres et de la base de données
 
 28/08/2025
 Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : Fonctionnalité de recherche d'utilisateur et de réservation par l'admin, ajout d'une modal pour l'affichage d'information d'un membre.
@@ -21,7 +17,33 @@ Good evening, everyone. Today, in the library management system: -Creation of a 
 Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques, Modules de reservations : affichage des réservations et filtrage par status du coté admin, affichage des reservations actif du coté membres. Modules d'emprunts : affichage des livres emprunté pas un membres précis.
 
 25/08/2025
-Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création de la base de données, mise en place de la factory pour l'access au données dans la base de données, ajout des controllers pour l'ajout et suppression d'utilisateur ainsi que les controllers de connexion et deconnexion d'utilisateurs.
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : création de la base de données, mise en place de la factory pour l'acc
+
+
+
+
+
+
+
+Sixieme Semaine
+Semaine: Continuation du TP de gestion de bibliotheques, achevement de la majeur partie de mon travail, en attente d l'avancement de mon college eb l'aidant. Ajout de membres, connexion, changement de mots de pase, emprunt et remise de livre, creation de reservation et update de statut, logo bien choisis et design de l'application matchant avec cela .
+
+
+29/08/2025
+Bonsoir à tous,
+Aujourd’hui sur le tp de gestion de bibliothèque : modification apportée sur le module d'emprunts de livres et de la base de données
+
+28/08/2025
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : Fonctionnalité de recherche d'utilisateur et de réservation par l'admin, ajout d'une modal pour l'affichage d'information d'un membre.
+
+27/08/2025
+Good evening, everyone. Today, in the library management system: -Creation of a modal page for addition of members by admin and modal for user informations display. -Member's loan list.
+
+26/08/2025
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques, Modules de reservations : affichage des réservations et filtrage par status du coté admin, affichage des reservations actif du coté membres. Modules d'emprunts : affichage des livres emprunté pas un membres précis.
+
+25/08/2025
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : Ameliorations du design du dashboard de l'administrateur, Filtres de livres par popularité(livres le plus emprunté, modifications apporter a la base de données.
 
 
 
