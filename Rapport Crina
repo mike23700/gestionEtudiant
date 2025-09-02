@@ -40,7 +40,7 @@ Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : Fonctionnalit
 Good evening, everyone. Today, in the library management system: -Creation of a modal page for addition of members by admin and modal for user informations display. -Member's loan list.
 
 02/09/2025
-Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques, Modules de reservations : affichage des réservations et filtrage par status du coté admin, affichage des reservations actif du coté membres. Modules d'emprunts : affichage des livres emprunté pas un membres précis.
+Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques, ajout d'historique d'emprunts et de reservations et ajout de date limit de reservations pour faire expirer une reservation.
 
 01/09/2025
 Bonsoir a tous aujourd'hui sur le tp de gestion de bibliotheques : Ameliorations du design du dashboard de l'administrateur, Filtres de livres par popularité(livres le plus emprunté, modifications apporter a la base de données.
